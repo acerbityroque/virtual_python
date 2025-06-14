@@ -1,0 +1,106 @@
+# ⚙️ Configurando a IDE para utilizar o pacote face_recognition no Virtual Studio Code (Python v. 3.10)
+
+
+## 🔧 Sistemas Necessários
+
+Antes de iniciar, verifique se os seguintes sistemas estão devidamente instalados no seu computador:
+
+- 🌀 [**Python**](https://www.python.org/downloads/) (`3.13.5` no momento da redação deste artigo)
+- 📦 **Extensão Python para VSCode**
+- 🧠 [**Visual Studio Code**](https://code.visualstudio.com/)
+
+
+## 1. Abra Seu Projeto no VS Code
+Abra a pasta raiz do seu projeto no Visual Studio Code. Este será o local onde o ambiente virtual será criado.
+
+## 2. Abra o Terminal Integrado
+No VS Code, acesse `Terminal > New Terminal` (ou utilize o atalho `Ctrl + Shift + '`). O terminal será aberto diretamente na pasta do seu projeto.
+
+## 3. Crie o Ambiente Virtual
+No terminal, execute o comando abaixo para criar o ambiente virtual. É uma convenção nomear a pasta do ambiente virtual como .venv.
+
+```bash
+python -m venv .venv
+```
+
+- python: Invoca o interpretador Python padrão do seu sistema.
+
+- -m venv: Indica ao Python para executar o módulo venv, responsável pela criação do ambiente virtual.
+
+- .venv: Define o nome do diretório que abrigará o ambiente virtual. O ponto (.) no início é opcional e serve para ocultar a pasta em alguns sistemas operacionais.
+
+Após a execução, uma nova pasta .venv será criada dentro do seu projeto, contendo uma cópia isolada do interpretador Python e de suas bibliotecas.
+
+
+## 4. Ative o Ambiente Virtual
+A ativação do ambiente virtual direciona o sistema para usar o interpretador Python e os pacotes instalados dentro do .venv para o terminal atual.
+
+- Para Windows (PowerShell):
+
+Se for a primeira vez que você está ativando scripts no PowerShell, pode ser necessário ajustar a política de execução. Copie e cole o comando abaixo no seu terminal APENAS UMA VEZ no seu sistema se a ativação falhar:
+```bash
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted -Force
+```
+Após isso (ou se já tiver ajustado a política), copie e cole o comando abaixo para ativar o ambiente:
+```bash
+.venv\Scripts\activate
+```
+- Para Windows (CMD - Prompt de Comando), copie e cole o comando abaixo para ativar o ambiente:
+
+```bash
+.venv\Scripts\activate.bat
+```
+- Para macOS / Linux (Bash/Zsh), copie e cole o comando abaixo para ativar o ambiente:
+```bash
+source .venv/bin/activate
+```
+
+Ao ativar com sucesso, o nome (.venv) (ou similar) aparecerá no início da linha de comando do seu terminal, indicando que o ambiente virtual está ativo.
+
+## 5. Selecione o Interpretador Python no VS Code
+Para garantir que o VS Code utilize o interpretador do seu ambiente virtual:
+```bash
+Pressione Ctrl + Shift + P (ou Cmd + Shift + P no macOS) para abrir a Paleta de Comandos.
+```
+
+Digite e selecione a opção `Python: Select Interpreter.`
+
+`Escolha o interpretador que está localizado dentro da sua pasta .venv (ex: .venv\Scripts\python.exe no Windows ou .venv/bin/python no macOS/Linux).`
+
+## 6. Instale as Dependências do Projeto
+
+Com o ambiente virtual ativado e selecionado no VS Code, você pode instalar as bibliotecas necessárias para o seu projeto. Por exemplo, para instalar uma biblioteca específica, copie e cole:
+```bash
+pip install opencv-python
+```
+Se seu projeto possui um arquivo requirements.txt, instale todas as dependências de uma vez copiando e colando o comando:
+```bash
+pip install -r requirements.txt
+```
+
+## 7. Desative o Ambiente Virtual
+Quando finalizar seu trabalho no projeto e desejar sair do ambiente virtual, basta copiar e colar o comando:
+```bash
+deactivate
+```
+
+O prefixo (.venv) desaparecerá do terminal, e você retornará ao ambiente Python global do seu sistema.
+
+
+```bash
+npm install @faker-js/faker --save-dev
+```
+
+## 8. Instale as bibliotecas!
+
+Agora você pode instalar todas as bibliotecas:
+```bash
+pip install opencv-python
+
+pip install face_recognition
+
+pip install numpy
+
+pip install setuptools
+```
+----
